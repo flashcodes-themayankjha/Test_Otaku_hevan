@@ -1,0 +1,216 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Mukta', sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: rgba(12, 12, 12, 0.7); /* Transparent background */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar .logo span {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-right: 1rem;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #c0e81f;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 300px; /* Increase this value as needed */
+    background-color: rgba(12, 12, 12, 0.117);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Optional: Remove default padding */
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #0c0c0c;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.active .line:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .burger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active .line:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+.outer-container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.text {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.button {
+    display: inline-block;
+    font-weight: bold;
+    background-color: transparent;
+    color: #c0e81f;
+    border: 2px solid #c0e81f;
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #7a5c5c;
+    color: rgba(255, 255, 255, 0);
+    text-shadow: 0 0 10px #c0e81f;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Caveat', cursive;
+}
+
+p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+footer {
+    position: absolute;
+    bottom: 1%; /* Adjust this to center vertically */
+    left: 50%;
+    transform: translate(-50%, 50%); /* Center horizontally and vertically */
+    background-color: rgba(12, 12, 12, 0.704); /* Semi-transparent background */
+    color: #fff;
+    text-align: center;
+    padding: 1em 2em;
+    z-index: 4; /* Ensure it appears on top of the video */
+    border-radius: 10px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+    font-family: 'Mukta', sans-serif;
+}
+
